@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Badge from 'material-ui/Badge';
 
 class Ranking extends Component {
     constructor(props) {
@@ -34,7 +35,11 @@ class Ranking extends Component {
                 <ul>
                     {
                         this.state.participantes.map(user => {
-                            return <li key={user.IDPARTICIPANTES}>{user.NOME}</li>
+                            return <li key={user.IDPARTICIPANTES}>
+                                <Badge badgeContent={user.PONTOS} primary={true}>
+                                    {user.NOME}
+                                </Badge>
+                            </li>
                         })
                     }
                 </ul>
