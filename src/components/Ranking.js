@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Badge from 'material-ui/Badge';
+import FooterApp from './FooterApp';
 
 class Ranking extends Component {
     constructor(props) {
@@ -31,7 +32,7 @@ class Ranking extends Component {
         console.log(this.state.participantes[0])
         return (
             <div>
-                <h2>Rankings</h2>
+                <h2>Rankings <i class="material-icons">face</i></h2>
                 <ul>
                     {
                         this.state.participantes.map(user => {
@@ -43,6 +44,7 @@ class Ranking extends Component {
                         })
                     }
                 </ul>
+                <FooterApp />
             </div>
         )
     }
